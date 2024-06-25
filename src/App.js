@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Box } from "@mui/material";
+import ButtonAppBar from "./AppBar";
+import PermanentDrawerLeft from "./PermanentDrawer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ display: "flex" }}>
+      <ButtonAppBar />
+      <PermanentDrawerLeft />
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, ml: 30 }}>
+        {/* Main content goes here */}
+      </Box>
+    </Box>
   );
 }
 
