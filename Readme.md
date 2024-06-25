@@ -1,224 +1,70 @@
-# Tutorial: Customizing MUI Components and Adding Custom Fonts
+# Getting Started with Create React App
 
-This tutorial will guide you through customizing Material-UI (MUI) components and adding custom fonts to your React application. We'll use examples from a movie application to illustrate these concepts.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 1. Setting Up the Project Structure
+## Available Scripts
 
-First, let's look at the basic structure of our app:
+In the project directory, you can run:
 
-```jsx
-// App.js
-import React from "react";
-import { Box } from "@mui/material";
-import ButtonAppBar from "./AppBar";
-import PermanentDrawerLeft from "./PermanentDrawer";
+### `npm start`
 
-function App() {
-  return (
-    <Box sx={{ display: "flex" }}>
-      <ButtonAppBar />
-      <PermanentDrawerLeft />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, ml: 30 }}>
-        {/* Main content goes here */}
-      </Box>
-    </Box>
-  );
-}
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-export default App;
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-This setup creates a layout with an AppBar, a permanent drawer, and a main content area.
+### `npm test`
 
-## 2. Customizing the AppBar
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Let's look at how we've customized the AppBar:
+### `npm run build`
 
-```jsx
-// AppBar.js
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import InputBase from "@mui/material/InputBase";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import SearchIcon from "@mui/icons-material/Search";
-import PersonIcon from "@mui/icons-material/Person";
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-export default function ButtonAppBar() {
-  return (
-    <AppBar
-      position="fixed"
-      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-    >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        {/* Logo */}
-        <Box
-          component="img"
-          sx={{
-            height: 60,
-            width: "auto",
-            maxHeight: { xs: 50, sm: 60, md: 70 },
-            maxWidth: { xs: 160, sm: 200, md: 240 },
-            marginLeft: 2,
-            marginY: 1,
-          }}
-          alt="Filmpire logo"
-          src="/images/Academix-logo.png"
-        />
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-        {/* Search Box */}
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            backgroundColor: "rgba(255, 255, 255, 0.15)",
-            borderRadius: "4px",
-            padding: "2px 8px",
-            width: "40%",
-          }}
-        >
-          <SearchIcon sx={{ color: "white", mr: 1 }} />
-          <InputBase
-            placeholder="Search for a Movie..."
-            sx={{
-              color: "white",
-              "& ::placeholder": { color: "white", opacity: 0.7 },
-              flexGrow: 1,
-            }}
-          />
-        </Box>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-        {/* Login Button */}
-        <Button
-          color="inherit"
-          startIcon={<PersonIcon />}
-          sx={{
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
-          }}
-        >
-          LOGIN
-        </Button>
-      </Toolbar>
-    </AppBar>
-  );
-}
-```
+### `npm run eject`
 
-Key customization points:
-- Using `sx` prop for custom styling
-- Responsive design for the logo using breakpoints
-- Custom styling for the search box and login button
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## 3. Creating a Custom Drawer
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-The PermanentDrawerLeft component showcases more advanced customization:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```jsx
-// PermanentDrawer.js
-import React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-// ... (import icons)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-const drawerWidth = 240;
-const drawerBg = "#0d253f";
-const textColor = "#01b4e4";
-const hoverBg = "#01b4e4";
-const hoverText = "#ffffff";
-const dividerColor = "#01b4e4";
+## Learn More
 
-// ... (categories and genres arrays)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-export default function PermanentDrawerLeft() {
-  return (
-    <Drawer
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: drawerWidth,
-          boxSizing: "border-box",
-          backgroundColor: drawerBg,
-          color: textColor,
-          top: 64,
-          height: "calc(100% - 64px)",
-        },
-      }}
-      variant="permanent"
-      anchor="left"
-    >
-      {/* Drawer content */}
-    </Drawer>
-  );
-}
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Key customization points:
-- Custom color scheme
-- Styling the Drawer paper
-- Custom list items with hover effects
+### Code Splitting
 
-## 4. Adding Custom Fonts
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-To add a custom font:
+### Analyzing the Bundle Size
 
-1. Place your font file in the `public/fonts` directory.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-2. Add the font-face declaration in your CSS (e.g., in `index.css`):
+### Making a Progressive Web App
 
-```css
-@font-face {
-  font-family: "Playwrite MX";
-  src: url("/public/fonts/PlaywriteMX-VariableFont_wght.ttf")
-    format("truetype-variations");
-  font-weight: 100 900;
-  font-style: normal;
-}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-3. Use the font in your components:
+### Advanced Configuration
 
-```jsx
-<Typography
-  variant="subtitle1"
-  sx={{
-    fontFamily: '"Playwrite MX", Arial, sans-serif',
-    fontWeight: 600,
-    fontSize: "20px",
-  }}
->
-  Categories
-</Typography>
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## 5. Responsive Design
+### Deployment
 
-MUI makes it easy to create responsive designs:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-```jsx
-sx={{
-  maxHeight: { xs: 50, sm: 60, md: 70 },
-  maxWidth: { xs: 160, sm: 200, md: 240 },
-}}
-```
+### `npm run build` fails to minify
 
-This sets different values for extra-small (xs), small (sm), and medium (md) screen sizes.
-
-## Conclusion
-
-By leveraging MUI's `sx` prop, custom components, and CSS techniques, you can create highly customized and responsive React applications. Remember to:
-- Use the `sx` prop for component-specific styling
-- Create custom color schemes for consistency
-- Implement responsive designs using breakpoints
-- Add custom fonts to enhance your app's typography
-
-With these techniques, you can build unique and visually appealing interfaces while benefiting from MUI's component library and theming system.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
