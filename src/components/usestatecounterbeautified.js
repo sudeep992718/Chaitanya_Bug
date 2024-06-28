@@ -10,19 +10,23 @@ function Counter() {
     <Paper
       elevation={3}
       sx={{
-        p: 4,
+        width: 300,
+        height: 300,
+        p: 3,
         backgroundColor: "#0d253f",
         color: "#01b4e4",
         borderRadius: 2,
-        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
       <Typography
         variant="h4"
         sx={{
-          mb: 3,
           fontFamily: '"Playwrite MX", Arial, sans-serif',
           fontWeight: 600,
+          textAlign: "center",
         }}
       >
         Counter
@@ -30,10 +34,10 @@ function Counter() {
       <Typography
         variant="h2"
         sx={{
-          mb: 4,
           fontFamily: '"Playwrite MX", Arial, sans-serif',
           fontWeight: 700,
           color: "#90cea1",
+          textAlign: "center",
         }}
       >
         {count}
