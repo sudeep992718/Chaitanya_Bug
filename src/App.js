@@ -14,7 +14,7 @@ function App() {
         <ButtonAppBar />
         <PermanentDrawerLeft />
         <Box
-          component="main"
+          component="main1"
           sx={{
             flexGrow: 1,
             display: "flex",
