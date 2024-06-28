@@ -1,0 +1,32 @@
+
+1. Paper component:
+   - `width: 300, height: 300`: Sets a fixed size of 300x300 pixels, making it square.
+   - `p: 3`: Adds padding of 3 units (24px by default in MUI) on all sides.
+   - `backgroundColor: "#0d253f"`: Sets a dark blue background.
+   - `color: "#01b4e4"`: Sets the default text color to light blue.
+   - `borderRadius: 2`: Rounds the corners slightly.
+   - `display: "flex"`: Uses flexbox for layout.
+   - `flexDirection: "column"`: Stacks child elements vertically.
+   - `justifyContent: "space-between"`: Distributes space evenly between child elements.
+
+2. First Typography (Counter title):
+   - `fontFamily: '"Playwrite MX", Arial, sans-serif'`: Sets the font.
+   - `fontWeight: 600`: Makes the font semi-bold.
+   - `textAlign: "center"`: Centers the text horizontally.
+
+3. Second Typography (Count display):
+   - Similar to the first, but with:
+   - `fontWeight: 700`: Makes the font bold.
+   - `color: "#90cea1"`: Sets the text color to a light green.
+
+4. Box containing buttons:
+   - `display: "flex"`: Uses flexbox for layout.
+   - `justifyContent: "center"`: Centers the buttons horizontally.
+   - `gap: 2`: Adds space between the buttons.
+
+5. Buttons:
+   - `backgroundColor`: Sets the background color (#01b4e4 for Decrease, #90cea1 for Increase).
+   - `&:hover`: Defines styles for when the mouse hovers over the button.
+   - `color`: Sets the text color (#0d253f for Increase button).
+
+This CSS creates a square container with evenly spaced elements inside, centered text, and custom-styled buttons. The color scheme uses a dark blue background with light blue and green accents.
