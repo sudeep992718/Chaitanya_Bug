@@ -1,4 +1,3 @@
-Certainly! Let me explain the CSS layout with a diagram and breakdown of how it works to center the Counter component:
 
 ```
 +------------------------------------------+
