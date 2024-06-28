@@ -30,3 +30,5 @@
    - `color`: Sets the text color (#0d253f for Increase button).
 
 This CSS creates a square container with evenly spaced elements inside, centered text, and custom-styled buttons. The color scheme uses a dark blue background with light blue and green accents.
+
+......
